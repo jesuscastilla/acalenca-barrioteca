@@ -14,6 +14,11 @@ PWA/api-config.php
 # Build output
 PWA/dist/
 
+# Subproyectos (tienen sus propios repos)
+PWA/
+SLiMS/
+barrioteca-android/
+
 # Archivos de la app Android (keystore y contraseñas - sensibles)
 barrioteca-android-app/signing.keystore
 barrioteca-android-app/signing-key-info.txt
