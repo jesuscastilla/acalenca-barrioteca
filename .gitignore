@@ -1,0 +1,35 @@
+# Dependencias
+PWA/node_modules/
+SLiMS/node_modules/
+node_modules/
+
+# Archivos de entorno (contienen claves y URLs privadas)
+.env
+PWA/.env
+
+# Configuracion sensible (claves API, rutas)
+api-config.php
+PWA/api-config.php
+
+# Build output
+PWA/dist/
+
+# Archivos de la app Android (keystore y contraseñas - sensibles)
+barrioteca-android-app/signing.keystore
+barrioteca-android-app/signing-key-info.txt
+barrioteca-android-app/*.apk
+barrioteca-android-app/*.aab
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
