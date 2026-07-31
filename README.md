@@ -2,11 +2,9 @@
 
 Biblioteca vecinal autogestionada de Salobreña (Granada). Sistema de préstamos y catálogo con software libre: **SLiMS** (backend PHP/MariaDB) + **PWA** (frontend React/TypeScript) + **App Android** (Trusted Web Activity).
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-
 ---
 
-## 📁 Repositorios
+## Repositorios
 
 Este es el **monorepo de documentación**. El código fuente está en repos separados:
 
@@ -18,25 +16,25 @@ Este es el **monorepo de documentación**. El código fuente está en repos sepa
 
 ---
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```
-┌──────────────────────────────────────────────────────┐
-│                  https://pelotxo.synology.me         │
-│                     NAS Synology                      │
-│                                                       │
-│  /barrioteca/          /slims/                        │
-│  ┌──────────────┐     ┌──────────────────────┐       │
-│  │ PWA (React)  │────▶│ SLiMS API (PHP)      │       │
-│  │ api-proxy.php│     │ api/index.php        │       │
-│  │ manifest.json│     │ CirculationController│       │
-│  │ sw.js        │     │ BiblioController     │       │
-│  │ icon*.png    │     │ MariaDB              │       │
-│  └──────────────┘     └──────────────────────┘       │
-│                                                       │
-│  📱 App Android (.apk) ──▶ https://pelotxo.synology.me│
-│       (Trusted Web Activity)                          │
-└──────────────────────────────────────────────────────┘
++------------------------------------------------------+
+|                https://pelotxo.synology.me            |
+|                   NAS Synology                        |
+|                                                       |
+|  /barrioteca/          /slims/                        |
+|  +----------------+   +------------------------+      |
+|  | PWA (React)    |-->| SLiMS API (PHP)        |      |
+|  | api-proxy.php  |   | api/index.php          |      |
+|  | manifest.json  |   | CirculationController  |      |
+|  | sw.js          |   | BiblioController       |      |
+|  | icon*.png      |   | MariaDB                |      |
+|  +----------------+   +------------------------+      |
+|                                                       |
+|  App Android (.apk) ---> https://pelotxo.synology.me  |
+|       (Trusted Web Activity)                          |
++------------------------------------------------------+
 ```
 
 - La PWA se comunica con la API de SLiMS mediante un proxy PHP (`api-proxy.php`)
@@ -46,7 +44,7 @@ Este es el **monorepo de documentación**. El código fuente está en repos sepa
 
 ---
 
-## 📱 App Android
+## App Android
 
 La PWA se ha convertido en una **app Android nativa** (`.apk` y `.aab`) mediante [PWABuilder](https://pwabuilder.com).
 
@@ -59,7 +57,7 @@ La PWA se ha convertido en una **app Android nativa** (`.apk` y `.aab`) mediante
 | targetSdkVersion | 35 |
 | URL | `https://pelotxo.synology.me/barrioteca` |
 | Tipo | Trusted Web Activity (Chrome Custom Tab) |
-| Cámara | ✅ Escáner de códigos de barras (ISBN/ASIN) |
+| Cámara | Si (escáner de códigos de barras ISBN/ASIN) |
 
 ### Actualizar la app
 
@@ -73,14 +71,14 @@ Para publicar una nueva versión en Google Play, consulta [`GUIA_APK.md`](GUIA_A
 |---------|-------------|
 | `Barrioteca Acalencá.apk` | APK firmada para instalar directamente |
 | `Barrioteca Acalencá.aab` | Android App Bundle para Google Play |
-| `signing.keystore` | 🔑 Certificado de firma (¡no perder!) |
+| `signing.keystore` | Certificado de firma (no perder) |
 | `signing-key-info.txt` | Contraseñas del keystore |
 
-> ⚠️ Los archivos `.apk`, `.aab`, `.keystore` y `signing-key-info.txt` **no se suben a GitHub** (`.gitignore`). Guárdalos en local y haz copia de seguridad.
+> AVISO: Los archivos `.apk`, `.aab`, `.keystore` y `signing-key-info.txt` **no se suben a GitHub** (`.gitignore`). Guárdalos en local y haz copia de seguridad.
 
 ---
 
-## 🚀 Despliegue rápido
+## Despliegue rápido
 
 Ver [`PWA/DEPLOYMENT_GUIDE.md`](https://github.com/jesuscastilla/acalenca-barrioteca-app) para despliegue detallado.
 
@@ -100,18 +98,18 @@ SLiMS se instala en `/slims/` del NAS siguiendo la [guía de instalación en Syn
 
 ---
 
-## 📚 Funcionalidades
+## Funcionalidades
 
-- 🔍 **Catálogo público**: Todos los libros con portada, sinopsis y metadatos
-- 📱 **Escáner de ISBN**: Usa la cámara del móvil para escanear códigos de barras
-- 👥 **Identificación de socias**: Cada socia tiene un ID único
-- 📖 **Préstamos y devoluciones**: Autogestión desde el móvil
-- 🏷️ **Libros sin ISBN**: Etiquetas imprimibles con código `LIB-XX`
-- 📊 **Dashboard personal**: "Mis préstamos" con fechas de vencimiento
+- **Catálogo público**: Todos los libros con portada, sinopsis y metadatos
+- **Escáner de ISBN**: Usa la cámara del móvil para escanear códigos de barras
+- **Identificación de socias**: Cada socia tiene un ID único
+- **Préstamos y devoluciones**: Autogestión desde el móvil
+- **Libros sin ISBN**: Etiquetas imprimibles con código `LIB-XX`
+- **Dashboard personal**: "Mis préstamos" con fechas de vencimiento
 
 ---
 
-## 🛠️ Tecnología
+## Tecnología
 
 | Componente | Stack |
 |-----------|-------|
@@ -123,7 +121,7 @@ SLiMS se instala en `/slims/` del NAS siguiendo la [guía de instalación en Syn
 
 ---
 
-## 📖 Documentación
+## Documentación
 
 | Archivo | Contenido |
 |---------|-----------|
@@ -134,12 +132,12 @@ SLiMS se instala en `/slims/` del NAS siguiendo la [guía de instalación en Syn
 
 ---
 
-## 🤝 Créditos
+## Créditos
 
 Desarrollado por **Peloxi** ([@Pelochochi](https://instagram.com/Pelochochi)) para la **Barrioteca Acalencá**, espacio perteneciente a **Lebeche**, asociación cultural y vecinal de Salobreña (Granada).
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 [GNU General Public License v3.0](LICENSE) — Software libre para una biblioteca libre.
