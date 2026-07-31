@@ -277,6 +277,7 @@ Ver `GUIA_APK.md` para instrucciones paso a paso sobre compilación, firma y pub
 
 - PWA:  https://github.com/jesuscastilla/acalenca-barrioteca-app
 - SLiMS: https://github.com/jesuscastilla/acalenca-barrioteca
+- App Android (docs): https://github.com/jesuscastilla/acalenca-barrioteca-app-android
 
 ---
 
