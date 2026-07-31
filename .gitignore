@@ -18,6 +18,7 @@ PWA/dist/
 PWA/
 SLiMS/
 barrioteca-android/
+barrioteca-ios/
 
 # Archivos de la app Android (keystore y contraseñas - sensibles)
 barrioteca-android-app/signing.keystore
