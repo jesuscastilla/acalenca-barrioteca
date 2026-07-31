@@ -13,6 +13,7 @@ Este es el **monorepo de documentación**. El código fuente está en repos sepa
 | **PWA (Frontend)** | React 19 + Vite + Tailwind + TypeScript | [github.com/jesuscastilla/acalenca-barrioteca-app](https://github.com/jesuscastilla/acalenca-barrioteca-app) |
 | **SLiMS (Backend)** | SLiMS 9.7.2 + API REST (PHP/MariaDB) | [github.com/jesuscastilla/acalenca-barrioteca](https://github.com/jesuscastilla/acalenca-barrioteca) |
 | **App Android (docs)** | Documentación, guías, app Android | [github.com/jesuscastilla/acalenca-barrioteca-app-android](https://github.com/jesuscastilla/acalenca-barrioteca-app-android) |
+| **App iOS (docs)** | Documentación, guías, app iOS | [github.com/jesuscastilla/acalenca-barrioteca-app-ios](https://github.com/jesuscastilla/acalenca-barrioteca-app-ios) |
 
 ---
 
