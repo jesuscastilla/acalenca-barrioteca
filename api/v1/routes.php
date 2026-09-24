@@ -16,13 +16,14 @@ if ((isset($header['SLiMS-Http-Cache']) || isset($header['slims-http-cache']))) 
 }
 
 /*----------  Require dependencies  ----------*/
-require 'lib/router.inc.php';
+require SB . 'lib/router.inc.php';
 require __DIR__ . '/controllers/HomeController.php';
 require __DIR__ . '/controllers/BiblioController.php';
 require __DIR__ . '/controllers/MemberController.php';
 require __DIR__ . '/controllers/SubjectController.php';
 require __DIR__ . '/controllers/ItemController.php';
 require __DIR__ . '/controllers/LoanController.php';
+require __DIR__ . '/controllers/CirculationController.php';
 
 /*----------  Create router object  ----------*/
 $router = new Router($sysconf, $dbs);
@@ -46,6 +47,15 @@ $router->map('GET', '/item/total/available', 'ItemController@getTotalAvailable')
 $router->map('GET', '/loan/summary', 'LoanController@getSummary');
 $router->map('GET', '/loan/getdate/[*:start_date]', 'LoanController@getDate');
 $router->map('GET', '/loan/summary/[*:date]', 'LoanController@getSummaryDate');
+
+/*----------  PWA Barrioteca Acalencá — Circulación  ----------*/
+$router->map('GET', '/member/[*:member_id]/verify', 'CirculationController@verifyMember');
+$router->map('GET', '/member/[*:member_id]/loans', 'CirculationController@getMemberLoans');
+$router->map('GET', '/item/[*:isbn]/status', 'CirculationController@getItemStatus');
+$router->map('POST', '/loan/borrow', 'CirculationController@createLoan');
+$router->map('POST', '/loan/return', 'CirculationController@returnLoan');
+$router->map('GET', '/biblio/search', 'BiblioController@search');
+$router->map('GET', '/biblio/[*:id]', 'BiblioController@getDetail');
 
 /*----------  Custom route based on hook plugin  ----------*/
 \SLiMS\Plugins::getInstance()->execute('custom_api_route', ['router' => $router]);
